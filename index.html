@@ -13,7 +13,15 @@
         .li-inline {
             display: inline;
             float: left;
+        }
+
+        .li-inline:after {
+            content: "/";
             padding: 0 10px;
+        }
+
+        .li-inline:last-child:after {
+            content: "";
         }
     </style>
 </head>
@@ -29,6 +37,19 @@
                     <a href="https://twitter.com/alswl">Twitter</a>
                 </li>
                 <li class="li-inline">
+                    <a href="https://github.com/alswl">Github</a>
+                </li>
+                <li class="li-inline">
+                    <a href="https://www.zhihu.com/people/alswl">知乎</a>
+                </li>
+                <li class="li-inline">
+                    <a href="https://www.douban.com/people/alswl/">豆瓣</a>
+                </li>
+            </ul>
+        </div>
+        <div class="parent">
+            <ul class="list-unstyled">
+                <li class="li-inline">
                     <a href="https://blog.alswl.com/">blog（中文）</a>
                 </li>
                 <li class="li-inline">
@@ -36,6 +57,7 @@
                 </li>
             </ul>
         </div>
+
     </main>
     <footer class="mastfoot mt-auto">
         <div class="inner">
