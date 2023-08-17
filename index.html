@@ -10,6 +10,7 @@
             background: linear-gradient(135deg, rgb(0 255 111) 0%, rgb(0 120 255) 100%);
             color: #333;
         }
+
         a {
             color: #fff;
         }
@@ -33,6 +34,15 @@
         .li-inline:last-child:after {
             content: "";
         }
+
+        .rel-content {
+            display: none;
+            position: absolute;
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: #fff;
+            border: 0 solid #000;
+        }
     </style>
 </head>
 <body class="text-center">
@@ -41,6 +51,24 @@
     </header>
     <main role="main" class="inner cover">
         <h1 class="cover-heading">Hi, I'm alswl.</h1>
+        <div class="parent">
+            <ul class="list-unstyled">
+                <li class="li-inline">
+                    <a href="https://blog.alswl.com/">Blog（中文）</a>
+                </li>
+                <li class="li-inline">
+                    <a href="https://en.blog.alswl.com/">Blog (en)</a>
+                </li>
+                <li class="li-inline">
+                    <a id="wechat-subscription" onmouseover="showRelContent(event)" onmouseout="hideRelContent(event)"
+                       class="a-hover-handler" href="#">公众号</a>
+                    <div class="rel-content">
+                        <img width="160px" height="160px"
+                             src="https://e25ba8-log4d-c.dijingchao.com/upload_dropbox/201605/qrcode_for_gh_17e2f9c2caa4_258.jpg">
+                    </div>
+                </li>
+            </ul>
+        </div>
         <div class="parent">
             <ul class="list-unstyled">
                 <li class="li-inline">
@@ -57,16 +85,6 @@
                 </li>
             </ul>
         </div>
-        <div class="parent">
-            <ul class="list-unstyled">
-                <li class="li-inline">
-                    <a href="https://blog.alswl.com/">blog（中文）</a>
-                </li>
-                <li class="li-inline">
-                    <a href="https://en.blog.alswl.com/">blog (en)</a>
-                </li>
-            </ul>
-        </div>
 
     </main>
     <footer class="mastfoot mt-auto">
@@ -74,5 +92,20 @@
         </div>
     </footer>
 </div>
+<script>
+    function showRelContent(event) {
+        const handler = event.target;
+        const content = handler.nextElementSibling;
+        content.style.display = "block";
+        content.style.top = handler.offsetTop + handler.offsetHeight + 20 + "px";
+        content.style.left = handler.offsetLeft + "px";
+    }
+
+    function hideRelContent(event) {
+        const handler = event.target;
+        const content = handler.nextElementSibling;
+        content.style.display = "none";
+    }
+</script>
 </body>
 </html>
